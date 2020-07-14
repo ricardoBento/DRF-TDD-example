@@ -43,7 +43,7 @@ INSTALLED_APPS = [
 
     'users',
     'todos',
-
+    'corsheaders',
     'django_nose'
 ]
 
@@ -55,6 +55,16 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware'
+]
+
+# CORS settings for the ionic app
+CORS_ORIGIN_WHITELIST = [
+    "ionic://localhost",
+    "http://localhost",
+    "http://localhost:8100",
+    "http://localhost:8101",
+    "https://ionic-pwa-2301.web.app"
 ]
 
 ROOT_URLCONF = 'todoapp.urls'
